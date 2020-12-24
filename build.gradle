@@ -22,6 +22,11 @@ javadoc {
     source = sourceSets.main.allJava
     classpath = configurations.compile
 }
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.foo.bar.MainClass'
+    }
+}
 allprojects {
     gradle.projectsEvaluated {
         tasks.withType(JavaCompile) {
